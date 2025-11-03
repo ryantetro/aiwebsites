@@ -70,12 +70,13 @@ const steps = [
 ];
 
 // Portfolio projects
+// Screenshots are placed in /public/portfolio/ folder
 const portfolio = [
   {
     name: "PostGame AI",
     tag: "AI Mental Performance Coach",
     url: "https://www.getpostgame.ai/",
-    img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&q=80",
+    img: "/portfolio/getpostgameai.png",
     featured: true,
     description:
       "AI-powered mental performance coaching designed specifically for athletes",
@@ -90,19 +91,19 @@ const portfolio = [
     name: "The Hyper Chamber",
     tag: "Hyperbaric Therapy",
     url: "https://www.thehyperchamber.com/",
-    img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=1200&q=80",
+    img: "/portfolio/thehyperchamber.png",
   },
   {
     name: "Jordanelle Aqua Park",
     tag: "Aquatic Recreation",
     url: "https://www.jordanelleaquapark.com/",
-    img: "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=1200&q=80",
+    img: "/portfolio/jordenellaaquapark.png",
   },
   {
     name: "Arro Jet",
     tag: "Aviation Services",
     url: "https://arro-jet-website.vercel.app/",
-    img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80",
+    img: "/portfolio/arrojet.png",
   },
 ];
 
@@ -668,50 +669,17 @@ export default function ContractorSitesLanding() {
                 >
                   <div className="grid md:grid-cols-2 gap-0">
                     <div className="relative aspect-[16/10] md:aspect-auto md:h-full overflow-hidden bg-slate-900 rounded-l-2xl">
-                      {/* Browser chrome simulation */}
-                      <div className="absolute top-0 left-0 right-0 z-10 bg-slate-800 border-b border-slate-700 px-3 py-2 flex items-center gap-2">
-                        <div className="flex gap-1.5">
-                          <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                          <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                        </div>
-                        <div className="flex-1 mx-3 bg-slate-900 rounded px-3 py-1.5 text-xs text-slate-400 font-mono flex items-center gap-2">
-                          <svg
-                            className="w-3 h-3"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                            />
-                          </svg>
-                          <span className="truncate">
-                            {p.url.replace(/^https?:\/\//, "")}
-                          </span>
-                        </div>
-                      </div>
-                      {/* Website Preview */}
-                      <div className="absolute inset-0 pt-10 overflow-hidden bg-slate-900">
-                        <iframe
-                          src={p.url}
-                          className="absolute inset-0 w-full h-full border-0"
-                          style={{
-                            width: "200%",
-                            height: "200%",
-                            transform: "scale(0.5)",
-                            transformOrigin: "top left",
-                          }}
+                      {/* Website Preview - Static Image */}
+                      <div className="absolute inset-0 overflow-hidden bg-slate-900">
+                        <Image
+                          src={p.img}
+                          alt={`${p.name} website preview`}
+                          fill
+                          className="object-cover"
                           loading="lazy"
-                          title={`${p.name} Preview`}
-                          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         />
                       </div>
-                      <div className="absolute top-16 left-4 z-20">
+                      <div className="absolute top-4 left-4 z-20">
                         <div className="rounded-lg bg-white/90 backdrop-blur-sm px-3 py-1.5 text-xs font-semibold text-[var(--accent)] border border-[var(--accent)]/20">
                           Featured Project
                         </div>
@@ -797,33 +765,15 @@ export default function ContractorSitesLanding() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                <div className="aspect-[16/10] overflow-hidden relative bg-slate-900">
-                  {/* Browser chrome for regular items */}
-                  <div className="absolute top-0 left-0 right-0 z-10 bg-slate-800 border-b border-slate-700 px-2 py-1.5 flex items-center gap-1.5">
-                    <div className="flex gap-1">
-                      <div className="w-2 h-2 rounded-full bg-red-500"></div>
-                      <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-                      <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                    </div>
-                    <div className="flex-1 mx-2 bg-slate-900 rounded px-2 py-1 text-[10px] text-slate-400 font-mono truncate">
-                      {p.url.replace(/^https?:\/\//, "").substring(0, 25)}...
-                    </div>
-                  </div>
-                  {/* Website Preview */}
-                  <div className="absolute inset-0 pt-8 overflow-hidden bg-slate-900">
-                    <iframe
-                      src={p.url}
-                      className="absolute inset-0 w-full h-full border-0"
-                      style={{
-                        width: "200%",
-                        height: "200%",
-                        transform: "scale(0.5)",
-                        transformOrigin: "top left",
-                      }}
+                <div className="aspect-[16/10] overflow-hidden relative bg-white">
+                  {/* Website Preview - Static Image */}
+                  <div className="absolute inset-0 overflow-hidden bg-white flex items-center justify-center">
+                    <Image
+                      src={p.img}
+                      alt={`${p.name} website preview`}
+                      fill
+                      className="object-contain"
                       loading="lazy"
-                      title={`${p.name} Preview`}
-                      sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     />
                   </div>
                 </div>
