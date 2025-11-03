@@ -273,14 +273,14 @@ export default function ContractorSitesLanding() {
           >
             <Image
               src="/logo.png"
-              alt="BuildFast Sites Logo"
-              width={48}
-              height={48}
-              className="h-12 w-12 object-contain"
+              alt="ZeroToSite Logo"
+              width={64}
+              height={64}
+              className="h-16 w-16 object-contain"
               priority
             />
-            <span className="font-semibold tracking-tight">
-              BuildFast Sites
+            <span className="text-lg font-semibold tracking-tight bg-gradient-to-r from-[var(--accent)] via-[var(--accent-2)] to-[var(--accent)] bg-clip-text text-transparent bg-[length:200%_auto] animate-[gradient_3s_ease_infinite]">
+              ZeroToSite
             </span>
           </motion.a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-slate-600">
@@ -291,7 +291,7 @@ export default function ContractorSitesLanding() {
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400 }}
             >
-              Work
+              Portfolio
             </motion.a>
             <motion.a
               href="#services"
@@ -347,7 +347,7 @@ export default function ContractorSitesLanding() {
         >
           <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[36rem] w-[36rem] rounded-full blur-3xl opacity-30 bg-[radial-gradient(circle_at_center,var(--accent),transparent_60%)]" />
         </motion.div>
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+        <div className="mx-auto max-w-7xl px-6 py-12 md:py-16 grid md:grid-cols-2 gap-10 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -359,7 +359,7 @@ export default function ContractorSitesLanding() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              A professional website that you'll love.
+              A professional website that you&apos;ll love.
               <span className="bg-linear-to-r from-[var(--accent)] to-[var(--accent-2)] bg-clip-text text-transparent">
                 {" "}
                 Fast, mobile optimized, and SEO ready.
@@ -862,8 +862,8 @@ export default function ContractorSitesLanding() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          50% to start, 50% on launch. Need something custom? We'll quote it
-          fast.
+          50% to start, 50% on launch. Need something custom? We&apos;ll quote
+          it fast.
         </motion.p>
         <div className="mt-8 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {[
@@ -1036,8 +1036,8 @@ export default function ContractorSitesLanding() {
                 Ready to get started?
               </h2>
               <p className="mt-2 text-slate-900/80">
-                Send us your details and we'll get back to you quickly with a
-                quote and next steps.
+                Send us your details and we&apos;ll get back to you quickly with
+                a quote and next steps.
               </p>
             </motion.div>
             <motion.form
@@ -1150,7 +1150,7 @@ export default function ContractorSitesLanding() {
                   animate={{ opacity: 1, y: 0 }}
                   className="mt-3 rounded-xl bg-green-50 border border-green-200 px-4 py-2 text-sm text-green-800"
                 >
-                  ✓ Thank you! We'll be in touch soon.
+                  ✓ Thank you! We&apos;ll be in touch soon.
                 </motion.div>
               )}
               {submitStatus === "error" && (
@@ -1204,13 +1204,13 @@ export default function ContractorSitesLanding() {
             >
               <Image
                 src="/logo.png"
-                alt="BuildFast Sites Logo"
-                width={24}
-                height={24}
-                className="h-6 w-6 object-contain"
+                alt="ZeroToSite Logo"
+                width={40}
+                height={40}
+                className="h-10 w-10 object-contain"
               />
             </motion.div>
-            <span>© {new Date().getFullYear()} BuildFast Sites</span>
+            <span>© {new Date().getFullYear()} ZeroToSite</span>
           </motion.div>
           <motion.div
             className="flex items-center gap-6"
