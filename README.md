@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Websites
 
-## Getting Started
+A modern, professional Next.js application built with TypeScript and Tailwind CSS. This project provides a clean, organized foundation for building scalable web applications.
 
-First, run the development server:
+## 🚀 Tech Stack
+
+- **Next.js 16** - React framework with App Router
+- **React 19** - UI library
+- **TypeScript** - Type safety and better developer experience
+- **Tailwind CSS v4** - Utility-first CSS framework
+- **ESLint** - Code linting and quality
+
+## 📁 Project Structure
+
+```
+aiwebsites/
+├── src/
+│   ├── app/              # Next.js App Router pages and layouts
+│   │   ├── layout.tsx    # Root layout component
+│   │   ├── page.tsx      # Home page
+│   │   └── globals.css   # Global styles and Tailwind imports
+│   ├── components/       # Reusable React components
+│   │   ├── ui/          # UI component library
+│   │   │   └── Button.tsx
+│   │   └── index.ts     # Component exports
+│   ├── lib/             # Utility functions and helpers
+│   │   └── utils.ts     # Common utilities (e.g., cn for className merging)
+│   ├── types/           # TypeScript type definitions
+│   │   └── index.ts     # Global types
+│   ├── hooks/           # Custom React hooks
+│   └── utils/           # Additional utility functions
+├── public/              # Static assets
+├── package.json         # Dependencies and scripts
+├── tsconfig.json        # TypeScript configuration
+├── next.config.ts       # Next.js configuration
+└── README.md            # This file
+```
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm, yarn, or pnpm
+
+### Installation
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📝 Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-## Learn More
+## 🎨 Styling with Tailwind CSS
 
-To learn more about Next.js, take a look at the following resources:
+This project uses Tailwind CSS v4 with the new CSS-based configuration. Tailwind is configured in `src/app/globals.css`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```css
+@import "tailwindcss";
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+You can customize your theme directly in the CSS file using CSS variables and the `@theme` directive.
 
-## Deploy on Vercel
+## 🧩 Using Components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Components are organized in `src/components/`. Import them using the `@/` alias:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```tsx
+import { Button } from "@/components/ui/Button";
+```
+
+## 🛠️ Utilities
+
+### Class Name Merging
+
+Use the `cn` utility function to merge Tailwind classes:
+
+```tsx
+import { cn } from "@/lib/utils";
+
+<div className={cn("base-class", condition && "conditional-class")} />;
+```
+
+## 📚 Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [React Documentation](https://react.dev)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs)
+
+## 🤝 Contributing
+
+This is a professional foundation project. Feel free to extend it with:
+
+- Additional UI components
+- Custom hooks
+- API routes
+- Database integration
+- Authentication
+- And more!
+
+## 📄 License
+
+This project is private and proprietary.
