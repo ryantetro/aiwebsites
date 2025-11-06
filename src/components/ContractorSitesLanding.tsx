@@ -803,7 +803,7 @@ export default function ContractorSitesLanding() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Straightforward pricing
+          Custom pricing for your needs
         </motion.h2>
         <motion.p
           className="mt-2 text-slate-600 max-w-2xl"
@@ -812,106 +812,104 @@ export default function ContractorSitesLanding() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          50% to start, 50% on launch. Need something custom? We&apos;ll quote
-          it fast.
+          Every project is unique. Let&apos;s discuss your requirements and
+          create a custom quote that fits your budget and goals.
         </motion.p>
-        <div className="mt-8 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {[
-            {
-              title: "Starter",
-              price: "$499",
-              features: [
-                "1‑page site (hero, services, contact)",
-                "Mobile‑first + basic SEO",
-                "Contact form + Map",
-              ],
-              popular: false,
-            },
-            {
-              title: "Pro",
-              price: "$999",
-              features: [
-                "3–5 pages (Home, About, Services, Gallery, Contact)",
-                "Copy polish + stock images (if needed)",
-                "Analytics + basic SEO",
-              ],
-              popular: true,
-            },
-          ].map((plan, index) => (
-            <motion.div
-              key={plan.title}
-              className={`rounded-2xl ${
-                plan.popular
-                  ? "border-2 border-[var(--accent)] shadow-[var(--glow)]"
-                  : "border border-slate-200"
-              } bg-white p-6 shadow-sm`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-            >
-              {plan.popular && (
-                <motion.div
-                  className="inline-block rounded-full border border-[var(--accent)] px-2 py-1 text-xs text-[var(--accent)]"
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", delay: 0.3 }}
-                >
-                  Most popular
-                </motion.div>
-              )}
-              <h3
-                className={`font-semibold text-slate-900 ${
-                  plan.popular ? "mt-2" : ""
-                }`}
-              >
-                {plan.title}
-              </h3>
-              <div className="mt-1 text-3xl font-bold text-slate-900">
-                {plan.price}
-              </div>
-              <ul className="mt-4 space-y-2 text-sm text-slate-600">
-                {plan.features.map((feature, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: 0.4 + i * 0.1 }}
-                  >
-                    {feature}
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
         <motion.div
-          className="mt-6 grid md:grid-cols-2 gap-6 text-sm text-slate-600 max-w-2xl mx-auto"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          className="mt-8 max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
-          {[
-            { label: "Hosting & SSL:", value: "$35/mo" },
-            { label: "Maintenance (edits & updates):", value: "$99/mo" },
-          ].map((item, index) => (
-            <motion.div
-              key={item.label}
-              className="rounded-xl border border-slate-200 bg-white p-4"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-              whileHover={{ scale: 1.02 }}
-            >
-              {item.label}{" "}
-              <span className="font-medium text-slate-900">{item.value}</span>
-            </motion.div>
-          ))}
+          <div className="rounded-2xl border-2 border-[var(--accent)] bg-white p-8 md:p-12 shadow-lg">
+            <div className="text-center">
+              <motion.div
+                className="inline-block rounded-full bg-[var(--accent)]/10 px-4 py-2 mb-4"
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", delay: 0.3 }}
+              >
+                <span className="text-[var(--accent)] font-semibold text-sm">
+                  Flexible Pricing
+                </span>
+              </motion.div>
+              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mt-4">
+                Get a custom quote
+              </h3>
+              <p className="mt-4 text-slate-600 max-w-lg mx-auto">
+                Our sales team will work with you to understand your needs and
+                provide a tailored pricing solution. Whether you need a simple
+                one-page site or a comprehensive multi-page website, we&apos;ve
+                got you covered.
+              </p>
+              <motion.a
+                href="#contact"
+                onClick={(e) => handleSmoothScroll(e, "#contact")}
+                className="mt-8 inline-block rounded-lg bg-[var(--accent)] px-8 py-3 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Contact Sales Team
+              </motion.a>
+              <div className="mt-8 pt-8 border-t border-slate-200">
+                <p className="text-sm text-slate-500 mb-4">
+                  Standard payment terms:
+                </p>
+                <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-600">
+                  <div className="flex items-center gap-2">
+                    <svg
+                      className="w-5 h-5 text-[var(--accent)]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>50% to start</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      className="w-5 h-5 text-[var(--accent)]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>50% on launch</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg
+                      className="w-5 h-5 text-[var(--accent)]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>Fast quotes</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </motion.section>
 
